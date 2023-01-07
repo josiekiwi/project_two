@@ -1,21 +1,64 @@
+html,
+body {
+    height: 100%;
+    background-image: linear-gradient(90deg, #d160a6, #d772b0);
+}
+
+.indexbody {
+    height: 100%;
+    background-image: URL(images/example.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .container {
-    margin-top: 50px;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    margin-right: auto 0;
+    margin-left: auto 0;
+    margin-top: 80px;
+    width: 50%;
+}
 
 .row {
     text-align: center;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .card {
     display: inline-block;
-    height: 150px;
-    width: 150px;
-    background-color: #d6d0d0;
+    height: 120px;
+    width: 120px;
+    background-color: #7EBCF2!important;
+    border-radius: 0!important;
 }
 
 .card:hover {
-    box-shadow: inset 0 0 10px #8f8c8c;
+    box-shadow: inset 0 0 10px #184d7c;
     cursor: pointer;
+}
+
+.navbar-brand,
+.nav-link {
+    color: white !important;
+}
+
+#instructions {
+    display: inline-block;
+    height: 400px;
+    width: 500px;
+    background-color: #7EBCF2!important;
+    border-radius: 0!important;
+}
+
+img {
+    height: 480px;
+    width: 350px;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+}
+
+footer {
+    color: white!important;
 }
