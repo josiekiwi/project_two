@@ -1,7 +1,7 @@
 //create an array and push the images to the array//
-let cardData =[];
+let cardData = [];
 cardData.push("skeleton.jpeg", "mouth.jpeg", "hand.jpeg", "girl.jpeg", "ghost.jpeg", "fruit.jpeg", "boy.jpeg", "bath.jpeg");
-let copyArray=[];
+let copyArray = [];
 
 //use a for loop to duplicate the data to fill all the boxes//
 for (let index = 0; index < cardData.length; index++) {
@@ -11,7 +11,7 @@ for (let index = 0; index < cardData.length; index++) {
 }
 
 //replace the old array with the new duplicated one//
-cardData=copyArray;
+cardData = copyArray;
 
 //function with a for loop to shuffle the array//
 function shuffleArray(array) {
@@ -33,16 +33,16 @@ let block = false;
 
 //function that get the ID when card is clicked on//
 function cardFlip(id) {
-    if(cardsChosenId.length === 1 & cardsChosenId[0] === id) return 
-    if(block) return
+    if (cardsChosenId.length === 1 & cardsChosenId[0] === id) return
+    if (block) return
     let cardView = document.getElementById(id);
-    cardView.style.backgroundImage = "url(images/" + cardData[id] + ")"; 
+    cardView.style.backgroundImage = "url(images/" + cardData[id] + ")";
     console.log(id);
     cardsChosen.push(cardData[id]);
     console.log(cardsChosen);
     cardsChosenId.push(id);
 
-    if(cardsChosen.length === 2){
+    if (cardsChosen.length === 2) {
         block = true;
         setTimeout(checkForMatch, 500)
     }
@@ -56,36 +56,27 @@ function checkForMatch() {
         //alert("You found a match")//
         cardsWon.push(cardsChosen[0]);
         cardsWon.push(cardsChosen[1]);
-    if (cardsWon.length === cardData.length) {
-        alert("You won the game!")
-        for (let index = 0; index < cardData.length; index++) {
-            const element = index;
-            let cardView = document.getElementById(element);
-            cardView.style.backgroundImage = "url()"; 
+        if (cardsWon.length === cardData.length) {
+            alert("You won the game!")
+            for (let index = 0; index < cardData.length; index++) {
+                const element = index;
+                let cardView = document.getElementById(element);
+                cardView.style.backgroundImage = "url()";
+            }
+            shuffleArray(cardData);
+            cardsWon = [];
         }
-        shuffleArray(cardData);
-        cardsWon = [];
-    }
-    }
-    else {
+    } else {
         //alert('Sorry, try again');//
         for (let index = 0; index < cardsChosenId.length; index++) {
             const element = cardsChosenId[index];
             let cardView = document.getElementById(element);
-            cardView.style.backgroundImage = "url()"; 
-            
+            cardView.style.backgroundImage = "url()";
+
         }
     }
 
-    
+
     cardsChosen = [];
     cardsChosenId = [];
 }
-
-
-
-
-
-
-
-
